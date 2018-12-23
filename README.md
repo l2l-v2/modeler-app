@@ -8,7 +8,7 @@ credentials `admin/test` and url <http://localhost:8080/flowable-idm/index.html#
     java -jar flowable-idm.jar --spring.datasource.username=<your own username> --spring.datasource.password=<your own password>
     ```
 - **Step2** :  run the following cmd to start up the modler app. you should adjust the configuration of `spring-boot-maven-plugin`  to  alternate default credentials
-in `pom.xml`, we use the `mysql` profile by default, you can search the `mysql` profile in `pom.xml` to find the ｀spring.datasource` configuration.
+in `pom.xml`, we use the `mysql` profile by default, you can search the `mysql` profile in `pom.xml` to find the `spring.datasource`configuration.
     ```
     mvn clean install -Pmysql -DskipTests spring-boot:run
     ```
