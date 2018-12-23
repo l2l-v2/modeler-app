@@ -1,5 +1,5 @@
-# modeler-app
-borrow the modeler developed by Flowable Open Software
+# Modeler App
+We borrow the modeler developed by Flowable Open Software to model BPMN , CMMN and DMN.
 # How to use the modeler?
 - **Step1** : The modeler works ahead of the start up of the [flowable-idm-app](https://github.com/i-qiqi/flowabe-idm-app/tree/master), 
 We have offer the runnable jar of the idm app under the root directory. you just run the following cmd to start it up. you can log in the idm app with default
