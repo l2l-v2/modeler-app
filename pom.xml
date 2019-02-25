@@ -110,11 +110,6 @@
        	 	<groupId>org.flowable</groupId>
         	<artifactId>flowable-dmn-json-converter</artifactId>
       	</dependency>
-        <dependency>
-            <groupId>org.flowable.l2l</groupId>
-            <artifactId>flowable-idm</artifactId>
-            <version>6.4.0</version>
-        </dependency>
 
         <!-- DATABASE -->
         <dependency>
@@ -329,8 +324,8 @@
                             <arguments>
                                 <argument>--spring.datasource.driver-class-name=org.postgresql.Driver</argument>
                                 <argument>--spring.datasource.url=jdbc:postgresql://localhost:5432/flowable</argument>
-                                <argument>--spring.datasource.username=flowable</argument>
-                                <argument>--spring.datasource.password=flowable</argument>
+                                <argument>--spring.datasource.username=debian-sys-maint</argument>
+                                <argument>--spring.datasource.password=FJD8BzxFxPNVzdtU</argument>
                                 <argument>--flowable.modeler.app.deployment-api-url=http://localhost:9999/flowable-task/app-api</argument>
                                 <argument>--com.sun.management.jmxremote.port=4000</argument>
                             </arguments>
@@ -357,8 +352,8 @@
                             <arguments>
                                 <argument>--spring.datasource.driver-class-name=com.mysql.jdbc.Driver</argument>
                                 <argument>--spring.datasource.url=jdbc:mysql://127.0.0.1:3306/flowable?characterEncoding=UTF-8</argument>
-                                <argument>--spring.datasource.username=root</argument>
-                                <argument>--spring.datasource.password=root</argument>
+                                <argument>--spring.datasource.username=debian-sys-maint</argument>
+                                <argument>--spring.datasource.password=FJD8BzxFxPNVzdtU</argument>
                                 <argument>--flowable.modeler.app.deployment-api-url=http://localhost:9999/flowable-task/app-api</argument>
                                 <argument>--com.sun.management.jmxremote.port=4000</argument>
                             </arguments>

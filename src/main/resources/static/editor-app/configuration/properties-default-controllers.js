@@ -23,7 +23,8 @@ angular.module('flowableModeler').controller('FlowableStringPropertyCtrl', [ '$s
     $scope.inputBlurred = function() {
     	$scope.valueFlushed = true;
     	if ($scope.property.value) {
-    		$scope.property.value = $scope.property.value.replace(/(<([^>]+)>)/ig,"");
+    		$scope.property.value = $scope.property.value;
+                // .replace(/(<([^>]+)>)/ig,"");
     	}
         $scope.updatePropertyInModel($scope.property);
     };
@@ -39,8 +40,9 @@ angular.module('flowableModeler').controller('FlowableStringPropertyCtrl', [ '$s
     
     $scope.$on('$destroy', function controllerDestroyed() {
     	if(!$scope.valueFlushed) {
-    		if ($scope.property.value) {
-        		$scope.property.value = $scope.property.value.replace(/(<([^>]+)>)/ig,"");
+            if ($scope.property.value) {
+        		$scope.property.value = $scope.property.value;
+                    // .replace(/(<([^>]+)>)/ig,"");
         	}
     		$scope.updatePropertyInModel($scope.property, $scope.shapeId);
     	}

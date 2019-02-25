@@ -15,7 +15,7 @@
 
 angular.module('flowableModeler')
     .controller('StencilController', ['$rootScope', '$scope', '$http', '$modal', '$timeout', '$window', 'editorManager',
-                                      function ($rootScope, $scope, $http, $modal, $timeout, $window, editorManager) {
+                                      function ($rootScope, $scope, $http, $modal, $timeout, $window, editorManager,$log) {
 
         // Property window toggle state
         $scope.propertyWindowState = {'collapsed': false};
@@ -622,6 +622,7 @@ angular.module('flowableModeler')
         /* Helper method to retrieve the template url for a property */
         $scope.getPropertyTemplateUrl = function (index) {
             return $scope.selectedItem.properties[index].templateUrl;
+
         };
         $scope.getPropertyReadModeTemplateUrl = function (index) {
             return $scope.selectedItem.properties[index].readModeTemplateUrl;

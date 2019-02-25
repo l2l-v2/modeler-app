@@ -460,9 +460,10 @@ function encodeEntities(value) {
     }).
     replace(NON_ALPHANUMERIC_REGEXP, function(value) {
       return '&#' + value.charCodeAt(0) + ';';
-    }).
-    replace(/</g, '&lt;').
-    replace(/>/g, '&gt;');
+    });
+    //   .
+    // replace(/</g, '&lt;').
+    // replace(/>/g, '&gt;');
 }
 
 /**

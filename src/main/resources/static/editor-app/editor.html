@@ -18,7 +18,7 @@
         <div class="btn-group pull-right" ng-show="!secondaryItems.length">
 	        <div class="btn-toolbar pull-right" ng-controller="ToolbarController">
         	<button title="{{item.title | translate}}" ng-repeat="item in secondaryItems" ng-switch on="item.type" class="btn btn-inverse" ng-class="{'separator': item.type == 'separator'}"
-                ng-disabled="item.type == 'separator'" ng-click="toolbarSecondaryButtonClicked($index)" id="{{item.id}}">
+                ng-disabled="item.type == 'separator'" ng-click="toolbarSecondaryButtonClicked($index)" id="{{item.id}}">&lt;
         		<i ng-switch-when="button" ng-class="item.cssClass" class="toolbar-button" data-toggle="tooltip" title="{{item.title | translate}}"></i>
 	            <div ng-switch-when="separator" ng-class="item.cssClass"></div>
         	</button>
@@ -145,7 +145,10 @@
                                 <div>
                                     <div class="property-row" ng-repeat="property in selectedItem.properties"
                                          ng-click="propertyClicked($index)" ng-class="{'clear' : $index%2 == 0}">
-                                        <span class="title" ng-if="!property.hidden">{{ property.title }}&nbsp;:</span>
+                                        <span class="title" ng-if="!property.hidden && property.title == 'Text'">
+                                            <a href="editor-app/bianji.html">Text(点击编辑)</a>
+                                        </span><!--名称显示-->
+                                        <span class="title" ng-if="!property.hidden && property.title != 'Text'">{{ property.title }}&nbsp;:</span><!--名称显示-->
                                         <span class="title-removed" ng-if="property.hidden"><i>{{ property.title }}&nbsp;({{'PROPERTY.REMOVED' | translate}})&nbsp;:</i></span>
                                         <span class="value">
 	                                    <ng-include
@@ -155,7 +158,19 @@
                                                     ng-if="property.hasReadWriteMode && property.mode == 'read'"></ng-include>
 	                                    <ng-include src="getPropertyWriteModeTemplateUrl($index)"
                                                     ng-if="property.hasReadWriteMode && property.mode == 'write'"></ng-include>
-	                                </span>
+	                                    </span>
+                                        <!--<span class="value" ng-if="!property.hidden && property.title == 'Text'">-->
+                                        <!--<ng-include-->
+                                                <!--src="getPropertyTemplateUrl($index)"-->
+                                                <!--ng-if="!property.hasReadWriteMode"></ng-include>-->
+                                        <!--<ng-include src="getPropertyReadModeTemplateUrl($index)"-->
+                                                    <!--ng-if="property.hasReadWriteMode && property.mode == 'read'"></ng-include>-->
+                                        <!--<ng-include src="editor-app/configuration/properties/annotation-extension-write.html"-->
+                                                    <!--ng-if="property.hasReadWriteMode && property.mode == 'write'"></ng-include>-->
+                                        <!--</span>-->
+                                    </div>
+                                    <div ng-app="myApp" ng-controller="annotationController">
+                                        <p>annotation = {{annotation}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -166,3 +181,8 @@
         </div>
     </div>
 </div>
+
+
+
+
+
